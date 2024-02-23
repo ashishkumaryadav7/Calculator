@@ -25,13 +25,28 @@ html,body{
     flex-direction: column;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
 }
 .screen-input{
-    /* border: 1px solid; */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px;
+}
+.screen-input span{
+    display: inline-block;
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    background-image: linear-gradient(to right, #ffafbd, #d15c18);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
 }
 .screen-input input{
     border: none;
