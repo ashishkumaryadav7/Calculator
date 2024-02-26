@@ -2,7 +2,6 @@ var buttons=document.querySelectorAll(".button-1,.button-2,.button-3,.button-4,.
 var num = document.getElementById("number");
 function buttonPressed(val){
     val.classList.add('pressed');
-    // console.log(val);
     setTimeout(function(){
         val.classList.remove('pressed');
     },150)
@@ -12,8 +11,7 @@ buttons.forEach(function(buttton){
     buttton.addEventListener('click',function(e){
         var className=buttton.className;
         buttonPressed(buttton);
-        // console.log(buttton.innerHTML);
-        // fillValue(className);
+        
     })
 });
 
@@ -79,6 +77,7 @@ ac.addEventListener('click',function(){
 })
 del.addEventListener('click',function(){
     if(num.value.length > 0) {
+      
         num.value = num.value.slice(0, -1);}
 })
 mod.addEventListener('click',function(){
@@ -98,5 +97,38 @@ division.addEventListener('click',function(){
     num.value += division.innerText;
 })
 equal.addEventListener('click',function(){
-    num.value += equal.innerText;
+    // num.value += equal.innerText;
+    calculation(num);
 })
+
+
+function calculation(input){
+    let finalResult = 0;
+    var newValue = input.value;
+    console.log(newValue.length);
+    var strArray = newValue.split(/[\/\*\+\-\%]/);
+    var operators = newValue.split(/[^\/\*\+\-\%]+/).filter(Boolean);
+    console.log(operators);
+      let flag = false;
+      for(let i = 0; i < strArray.length; i++) {
+          if(strArray[i] === ''){
+              flag = true;
+              break;
+          }
+      }
+      if (flag){
+              num.value = "Error";
+              console.log("b");
+      }
+      else{
+        console.log("perform next");
+        
+        try {
+            finalResult = eval(newValue);
+            num.value = finalResult;
+        } catch(e) {
+            num.value = "Error";
+        }
+      }
+}
+
