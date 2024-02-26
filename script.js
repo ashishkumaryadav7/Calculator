@@ -105,10 +105,8 @@ equal.addEventListener('click',function(){
 function calculation(input){
     let finalResult = 0;
     var newValue = input.value;
-    console.log(newValue.length);
     var strArray = newValue.split(/[\/\*\+\-\%]/);
     var operators = newValue.split(/[^\/\*\+\-\%]+/).filter(Boolean);
-    console.log(operators);
       let flag = false;
       for(let i = 0; i < strArray.length; i++) {
           if(strArray[i] === ''){
@@ -118,11 +116,8 @@ function calculation(input){
       }
       if (flag){
               num.value = "Error";
-              console.log("b");
       }
       else{
-        console.log("perform next");
-        
         try {
             finalResult = eval(newValue);
             num.value = finalResult;
