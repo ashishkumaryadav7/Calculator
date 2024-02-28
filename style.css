@@ -15,6 +15,10 @@ html,body{
     justify-content: center;
     align-items: center;
 }
+
+button{
+    -webkit-tap-highlight-color: transparent;
+}
 .calculator-box{
     height: 500px;
     width: 350px;
