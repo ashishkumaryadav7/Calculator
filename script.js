@@ -2,6 +2,7 @@ var buttons=document.querySelectorAll(".button-1,.button-2,.button-3,.button-4,.
 var num = document.getElementById("number");
 function buttonPressed(val){
     val.classList.add('pressed');
+    // console.log(val);
     setTimeout(function(){
         val.classList.remove('pressed');
     },150)
@@ -11,7 +12,8 @@ buttons.forEach(function(buttton){
     buttton.addEventListener('click',function(e){
         var className=buttton.className;
         buttonPressed(buttton);
-        
+        // console.log(buttton.innerHTML);
+        // fillValue(className);
     })
 });
 
@@ -39,66 +41,202 @@ const equal = document.getElementById("equal");
 
 
 n1.addEventListener('click',function(){
-    num.value += n1.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value = n1.innerText;
+    }
+    else{
+        num.value += n1.innerText;
+    }
 })
 n2.addEventListener('click',function(){
-    num.value += n2.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n2.innerText;
+    }
+    else{
+        num.value += n2.innerText;
+    }
 })
 n3.addEventListener('click',function(){
-    num.value += n3.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n3.innerText;
+    }
+    else{
+        num.value += n3.innerText;
+    }
 })
 n4.addEventListener('click',function(){
-    num.value += n4.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n4.innerText;
+    }
+    else{
+        num.value += n4.innerText;
+    }
 })
 n5.addEventListener('click',function(){
-    num.value += n5.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n5.innerText;
+    }
+    else{
+        num.value += n5.innerText;
+    }
 })
 n6.addEventListener('click',function(){
-    num.value += n6.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n6.innerText;
+    }
+    else{
+        num.value += n6.innerText;
+    }
 })
 n7.addEventListener('click',function(){
-    num.value += n7.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n7.innerText;
+    }
+    else{
+        num.value += n7.innerText;
+    }
 })
 n8.addEventListener('click',function(){
-    num.value += n8.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n8.innerText;
+    }
+    else{
+        num.value += n8.innerText;
+    }
 })
 n9.addEventListener('click',function(){
-    num.value += n9.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n9.innerText;
+    }
+    else{
+        num.value += n9.innerText;
+    }
 })
 n0.addEventListener('click',function(){
-    num.value += n0.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value += n0.innerText;
+    }
+    else{
+        num.value += n0.innerText;
+    }
+
 })
 dot.addEventListener('click',function(){
-    num.value += dot.innerText;
+    if(num.value === "Error" ){
+        num.value = null;
+        num.value = '0'+dot.innerText;
+    }
+    else if(num.value == ''){
+        num.value = '0'+dot.innerText;
+    }
+    else{
+        num.value += dot.innerText;
+    }
     
 })
 ac.addEventListener('click',function(){
     num.value = null;
 })
 del.addEventListener('click',function(){
-    if(num.value.length > 0) {
+    if(num.value == "Error"){
+        num.value = null;
+    }
+    else{
+        if(num.value.length > 0) {
       
-        num.value = num.value.slice(0, -1);}
+            num.value = num.value.slice(0, -1);}
+    }
+    
 })
 mod.addEventListener('click',function(){
-    num.value += mod.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value = '0'+ mod.innerText; 
+    }
+    else if(num.value === ''){
+        num.value = '0'+ mod.innerText; 
+    }
+    else{
+        num.value += mod.innerText;  
+    }
     
 })
 plus.addEventListener('click',function(){
-    num.value += plus.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value = '0'+ plus.innerText;
+    }
+    else if(num.value === ''){
+        num.value = '0'+ plus.innerText; 
+    }
+    else{
+        num.value += plus.innerText; 
+    }
 })
 minus.addEventListener('click',function(){
-    num.value += minus.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value = '0'+ minus.innerText;
+    }
+    else if(num.value === ''){
+        num.value = '0'+ minus.innerText; 
+    }
+    else{
+        num.value += minus.innerText; 
+    }
 })
 product.addEventListener('click',function(){
-    num.value += product.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value = '0'+ product.innerText;
+    }
+    else if(num.value === ''){
+        num.value = '0'+ product.innerText; 
+    }
+    else{
+        num.value += product.innerText; 
+    }
 })
 division.addEventListener('click',function(){
-    num.value += division.innerText;
+    if(num.value == "Error"){
+        num.value = null;
+        num.value = '0'+ division.innerText;
+    }
+    else if(num.value === ''){
+        num.value = '0'+ division.innerText; 
+    }
+    else{
+        num.value += division.innerText;
+    }
 })
 equal.addEventListener('click',function(){
-    // num.value += equal.innerText;
-    calculation(num);
+    try{
+        if(num === null){
+            num.value=null;
+
+        }
+        else if(num.value === ''){
+
+        }
+        else if(num.value == "Error"){
+            num.value = null;
+        }
+        else{
+        calculation(num);
+        }
+    }
+    catch(error){
+    }
 })
 
 
@@ -118,6 +256,7 @@ function calculation(input){
               num.value = "Error";
       }
       else{
+        
         try {
             finalResult = eval(newValue);
             num.value = finalResult;
@@ -125,5 +264,5 @@ function calculation(input){
             num.value = "Error";
         }
       }
+      
 }
-
