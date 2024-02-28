@@ -176,6 +176,6 @@ span{
 }
 
 .pressed{
-    background-color: #8d99a5;
+    /* background-color: #8d99a5; */
     box-shadow: -2px -2px 4px rgba( 0, 0, 1);
 }
