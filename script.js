@@ -136,6 +136,9 @@ dot.addEventListener('click',function(){
         num.value = null;
         num.value = '0'+dot.innerText;
     }
+    else if((num.value).includes(".")){
+        // do nothing
+    }
     else if(num.value == ''){
         num.value = '0'+dot.innerText;
     }
